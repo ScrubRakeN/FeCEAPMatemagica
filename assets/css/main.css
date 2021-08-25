@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=STIX+Two+Text&family=Staatliches&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+    width: auto;
+}
+
+body {
+    background-color: royalblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: auto;
+}
+
+.formulary {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: lightSteelBlue;
+    
+}
+
+.tabbedPane {
+    width: 100%;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a#anchor{
+    font-family: 'STIX Two Text', serif;
+    color: blue;
+}
+
+a.panes{
+    background-color: lightSteelBlue;
+    border: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: 400;
+    font-size: 14pt;
+    color: royalblue;
+    width: 250px;
+    height: 58px;
+    float: left;
+}
+
+#isNotSelected {
+    color: lightSteelBlue;
+    background-color: royalblue;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+input#submit{
+    padding: 10px;
+    width: 300px;
+    border: solid 1px royalblue;
+    border-radius: 15px;
+    color: lightSteelBlue;
+    background-color: royalblue;
+    font-family: 'Staatliches', cursive;
+    font-size: 12pt;
+    margin: 0;
+}
+
+input#submit:hover{
+    color: royalblue;
+    background-color: lightSteelBlue;
+    transition: 100ms;
+    cursor: pointer;
+}
+
+input {
+    margin-bottom: 25px;
+    padding: 10px;
+    width: 250px;
+}
