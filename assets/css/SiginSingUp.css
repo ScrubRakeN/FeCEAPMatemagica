@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@600&family=Fjalla+One&family=Staatliches&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+    width: auto;
+}
+
+body {
+    background-color: rgb(40, 40, 83);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: auto;
+}
+
+.imgContainer{
+    margin-right: 100px;
+}
+
+img{
+    max-width: 500px;
+}
+
+.formulary {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #319bff;
+    
+}
+
+.tabbedPane {
+    width: 100%;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: bolder;
+    font-size: 14pt;
+    color: rgb(40, 40, 83);
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a#anchor{
+    font-family: 'Azeret Mono', monospace;
+    font-size: 10.5pt;
+    font-weight: 500;
+    color: rgb(58, 67, 75);
+}
+
+a.panes{
+    border: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 58px;
+    float: left;
+    background-color: #319bff;
+}
+
+#isNotSelected {
+    color: #319bff;
+    background-color: rgb(40, 40, 83);
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+input#submit{
+    padding: 10px;
+    width: 400px;
+    border: solid 1px rgb(40, 40, 83);
+    border-radius: 15px;
+    color: #319bff;
+    background-color: rgb(40, 40, 83);
+    font-family: 'Staatliches', cursive;
+    font-size: 12pt;
+    margin-bottom: 40px;
+}
+
+input#submit:hover{
+    color: rgb(27, 27, 82);
+    background-color: #319bff;
+    box-shadow: none;
+    transition: 150ms;
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
+    font-size: 11pt;
+    margin-top: 45px;
+    padding: 15px;
+    width: 350px;
+}
+
+input:hover{
+    transition: 150ms;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.3);
+}

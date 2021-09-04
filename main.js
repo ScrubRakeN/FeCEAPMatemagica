@@ -1,19 +1,21 @@
 const {app, BrowserWindow} = require('electron');
+const ipcMain = require('electron').ipcMain;
 const path = require('path');
 const url = require('url');
 
-function createWindow(){
+function createLoginWindow(){
 
     const win = new BrowserWindow({
-        width: 800, 
-        height: 600, 
+        width: 1500, 
+        height: 900, 
         autoHideMenuBar: true, 
+        title: 'Matemagica - SiginIn/SignUp',
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
+            preload: path.join(__dirname, 'preloadSignInSignUp.js'),
     }});
 
     win.loadURL(url.format({
-        pathname: path.join(__dirname, 'src/index.html'),
+        pathname: path.join(__dirname, 'src/SignInSignUp.html'),
         protocol: 'file', 
         slashes: true
     }));
@@ -22,11 +24,31 @@ function createWindow(){
 
 }
 
+function createMainWindow(){
+
+    const win = new BrowserWindow({
+        width: 1500,
+        height: 900,
+        autoHideMenuBar: true,
+        title: 'Menu - Game Selection',
+        webPreferences: {
+            preload: path.join(__dirname, 'preloadMainPage.js'),
+        }
+    });
+
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, 'src/mainPage.html'),
+        protocol: 'file',
+        slashes: true
+    }));
+
+}
+
 app.whenReady().then( () => {
-    createWindow();
+    createLoginWindow();
 
     app.on('activate', () => {
-        if(BrowserWidow.getAllWindows().length === 0) createWindow();
+        if(BrowserWidow.getAllWindows().length === 0) createLoginWindow();
     });
 });
 
@@ -34,4 +56,8 @@ app.on('window-all-closed', () => {
     if(process.platform !== 'darwin') app.quit();
 });
 
+ipcMain.on('mainPage', () =>{
+    createMainWindow();
+    BrowserWindow.getAllWindows()[1].close();
+});
 

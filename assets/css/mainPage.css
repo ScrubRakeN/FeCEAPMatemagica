@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+}
+
+html {
+    width: auto;
+    height: 100%;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

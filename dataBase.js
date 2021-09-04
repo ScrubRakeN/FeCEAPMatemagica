@@ -1,3 +1,4 @@
+const { ipcRenderer } = require('electron');
 const mysql = require('mysql');
 require('dotenv').config();
 
@@ -10,7 +11,7 @@ const connection = mysql.createConnection({
     
 connection.connect((error) =>{
     if(error){
-         return console.log("Connection faild!");
+         return console.log("Connection failed!");
     }
     return console.log('Succesfully connected!');
 });
@@ -45,7 +46,7 @@ function signIn(){
     connection.query(`SELECT name FROM users WHERE email = '${data.email}' and password = '${data.password}';`, (error, results, fields) =>{
         if(error) throw error;
         if(results.length > 0){
-            return console.log('Succesfully sined In!');
+            return ipcRenderer.send('mainPage');
         }
         console.log('Sign In faild!');
         connection.end(() =>{
